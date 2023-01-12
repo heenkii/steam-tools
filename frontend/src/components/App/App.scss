@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;700&family=ZCOOL+QingKe+HuangYou&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
+
+.content {
+  font-family: "ZCOOL QingKe HuangYou", "Arial";
+  background-color: #26292f;
+  color: #ffffff;
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  .container {
+    width: 80%;
+    min-height: 100%;
+    max-width: 1440px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .row {
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+  .main {
+    width: 100%;
+    display: flex;
+    flex: 1 1 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    .container {
+      //==flex: 1 1 auto;
+      display: flex;
+      align-items: flex-start;
+      .games__page {
+        width: 100%;
+      }
+    }
+  }
+  .header {
+    min-height: 100px;
+  }
+  .footer {
+    min-height: 50px;
+    font-size: 15px;
+    .container {
+      align-items: center;
+      justify-content: flex-end;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .stop__scroll {
+    overflow: hidden;
+    position: fixed;
+  }
+  .content {
+    flex: 1 1 auto;
+    .container {
+      width: 90%;
+      height: 100%;
+    }
+    .footer {
+      font-size: 10px;
+    }
+  }
+}
+
+.dark__theme {
+  background-color: #26292f;
+  color: #ffffff;
+}
+
+.light__theme {
+  background-color: #c3c3c3;
+  color: black;
+}

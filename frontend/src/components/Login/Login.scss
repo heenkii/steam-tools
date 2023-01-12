@@ -1,0 +1,195 @@
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 20px;
+  font-family: "PT Sans", sans-serif;
+  width: 300px;
+  .anonymous__user {
+    height: 50px;
+    font-size: 100%;
+    user-select: none;
+    .button {
+      border-radius: 10px;
+
+      display: flex;
+      height: 50px;
+      width: 120px;
+      align-items: center;
+      justify-content: center;
+      img {
+        margin-right: 10px;
+        height: 25px;
+      }
+    }
+  }
+
+  .logged__user {
+    display: flex;
+    align-items: center;
+    .user__link {
+      text-decoration: none;
+      color: white;
+      display: flex;
+      align-items: center;
+
+      .user__avatar {
+        border: solid 2px rgb(0, 0, 0);
+        object-fit: contain;
+        width: 50px;
+        border-radius: 32px;
+      }
+      .user__nickname {
+        width: 100%;
+        font-size: 18px;
+        margin-left: 5px;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        overflow: hidden;
+        position: relative;
+      }
+      .user__nickname::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 25%;
+        height: 100%;
+      }
+    }
+  }
+  .logout__image {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    padding-left: 10px;
+  }
+}
+
+@media (min-width: 701px) {
+  .user__nickname {
+    max-width: 200px;
+  }
+}
+
+//mobile version
+@media (max-width: 700px) {
+  .login {
+    margin-top: 15px;
+    width: 100%;
+    .anonymous__user {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .button {
+        width: 100%;
+        background-color: #444444;
+      }
+    }
+
+    .logged__user {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .user__link {
+        width: 85%;
+        .user__avatar {
+          border-radius: 32px;
+          border: none;
+        }
+
+        .user__nickname {
+          font-size: 16px;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+
+        .user__nickname::after {
+          background: linear-gradient(
+            to right,
+            rgba(255, 251, 251, 0) 0%,
+            #294783 90%
+          );
+        }
+      }
+
+      .logout {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .logout__image {
+          height: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .login {
+    .logged__user {
+      .user__link {
+        .user__nickname {
+          font-size: 15px;
+        }
+        .user__nickname::after {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.dark__theme {
+  .login {
+    .anonymous__user {
+      .button {
+        color: white;
+        background-color: #1a1a1a;
+      }
+    }
+    .logged__user {
+      .user__link {
+        color: white;
+        .user__nickname::after {
+          background: linear-gradient(
+            to right,
+            rgba(255, 251, 251, 0) 0%,
+            #26292f 100%
+          );
+        }
+      }
+    }
+  }
+}
+
+.light__theme {
+  .login {
+    .anonymous__user {
+      .button {
+        background-color: rgb(162, 162, 162);
+        color: black;
+      }
+    }
+    .logged__user {
+      .user__link {
+        color: black;
+        .user__nickname::after {
+          background: linear-gradient(
+            to right,
+            rgba(255, 251, 251, 0) 0%,
+            #c3c3c3 100%
+          );
+        }
+      }
+    }
+  }
+}

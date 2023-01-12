@@ -1,0 +1,29 @@
+.change__theme {
+  display: flex;
+  align-items: center;
+  margin-right: 25px;
+
+  .light,
+  .dark {
+    cursor: pointer;
+  }
+}
+
+.light__theme {
+  .dark {
+    display: none;
+  }
+}
+
+.dark__theme {
+  .light {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .change__theme {
+    justify-content: flex-start;
+    align-items: center;
+  }
+}

@@ -1,0 +1,42 @@
+.games__tool__panel {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+
+  .input__search__games {
+    height: 40px;
+    width: 100%;
+    border-radius: 10px;
+    padding-left: 15px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 500px) {
+  .games__tool__panel {
+    margin-top: 15px;
+    height: 50px;
+    width: 100%;
+
+    .input__search__games {
+      width: 100%;
+      height: 40px;
+    }
+  }
+}
+
+.dark__theme {
+  .input__search__games {
+    color: white;
+    background-color: #1a1a1a;
+  }
+}
+
+.light__theme {
+  .input__search__games {
+    color: black;
+    background-color: rgb(162, 162, 162);
+  }
+}
