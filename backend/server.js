@@ -11,7 +11,7 @@ const clientUrl = config.get("CLIENT_URL");
 const app = express();
 app.use(express.json());
 
-app.use("/", express.static(path.join(__dirname, "build")));
+app.use("/", express.static(path.join(__dirname, "..", "frontend", "build")));
 
 //create cookie configurations
 app.use(
@@ -35,7 +35,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.get("/", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "build", "index.html"));
+  res.sendFile(
+    path.resolve(__dirname, "..", "frontend", "build", "index.html")
+  );
 });
 app.use("/auth", require("./routes/auth.routes"));
 app.use("/api", require("./routes/data.routes"));

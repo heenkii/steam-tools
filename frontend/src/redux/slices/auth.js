@@ -2,7 +2,6 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const fetchMe = createAsyncThunk("auth/fetchMe", async () => {
-  console.log(process.env.REACT_APP_WEBSITE_NAME);
   const { data } = await axios.get(
     `${process.env.REACT_APP_WEBSITE_NAME}/auth/me`,
     {
@@ -12,7 +11,7 @@ export const fetchMe = createAsyncThunk("auth/fetchMe", async () => {
   return data.user;
 });
 
-export const logout = () => {};
+export const logout = () => { };
 
 const initialState = {
   data: null,
