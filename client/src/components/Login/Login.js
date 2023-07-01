@@ -28,6 +28,7 @@ const Login = () => {
             href={data._json.profileurl}
             target="_blank"
             className="user__link"
+            rel="noreferrer"
           >
             <img
               src={data.photos[1].value}

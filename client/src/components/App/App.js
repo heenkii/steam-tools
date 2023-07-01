@@ -49,9 +49,8 @@ function App() {
   return (
     <>
       <div
-        className={`content ${theme} ${
-          mobileMenuVisible ? "stop__scroll" : ""
-        }`}
+        className={`content ${theme} ${mobileMenuVisible ? "stop__scroll" : ""
+          }`}
       >
         <Header onChangeTheme={onChangeTheme} showMenu={openMenu} />
 
@@ -64,7 +63,7 @@ function App() {
         <footer className="footer row">
           <div className="container">
             <div className="creator">
-              Copyright © 2022 code_tamer. All rights reserved.
+              Copyright © 2022 net-walker. All rights reserved.
             </div>
           </div>
         </footer>

@@ -1,8 +1,9 @@
 const { Router } = require("express");
-const config = require("config");
 const passport = require("../passport");
-
+const dotenv = require("dotenv");
 //const checkAuth = require("../utils/checkAuth");
+
+dotenv.config();
 
 const router = Router();
 
@@ -10,9 +11,9 @@ router.get("/steam", passport.authenticate("steam"));
 
 router.get(
   "/steam/return",
-  passport.authenticate("steam", { failureRedirect: config.get("CLIENT_URL") }),
-  function (req, res) {
-    res.redirect(config.get("CLIENT_URL"));
+  passport.authenticate("steam", { failureRedirect: process.env.CLIENT_URL }),
+  function(req, res) {
+    res.redirect(process.env.CLIENT_URL);
   }
 );
 
@@ -34,7 +35,7 @@ router.get("/me", async (req, res) => {
 
 router.get("/logout", async (req, res) => {
   req.logout();
-  res.status(302).redirect(`${config.get("CLIENT_URL")}/`);
+  res.status(302).redirect(`${process.env.CLIENT_URL}/`);
 });
 
 module.exports = router;

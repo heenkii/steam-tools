@@ -1,7 +1,10 @@
 const axios = require("axios");
-const config = require("config");
+const dotenv = require("dotenv");
+
+dotenv.config();
+
 const _baseUrl = "https://api.steampowered.com/";
-const _key = config.get("STEAM_API_KEY");
+const _key = process.env.STEAM_API_KEY;
 
 const getUserGames = async (steamId64) => {
   try {

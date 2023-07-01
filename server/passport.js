@@ -1,8 +1,10 @@
 const passport = require("passport");
 const Strategy = require("passport-steam").Strategy;
-const config = require("config");
+const dotenv = require("dotenv");
 
-const serverUrl = config.get("SERVER_URL");
+dotenv.config();
+
+const serverUrl = process.env.SERVER_URL;
 
 passport.serializeUser((user, done) => {
   done(null, user);
@@ -17,10 +19,10 @@ passport.use(
     {
       returnURL: `${serverUrl}/auth/steam/return`,
       realm: `${serverUrl}/`,
-      apiKey: config.get("STEAM_API_KEY"),
+      apiKey: process.env.STEAM_API_KEY,
     },
-    function (identifier, profile, done) {
-      process.nextTick(function () {
+    function(identifier, profile, done) {
+      process.nextTick(function() {
         profile.identifier = identifier;
         return done(null, profile);
       });
